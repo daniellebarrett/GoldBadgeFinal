@@ -19,6 +19,16 @@ namespace BadgeRepository
             DoorNames = doorNames;
             BadgeID = badgeID;
         }
+
+        public void AddDoorToBadge(string door)
+        {
+            DoorNames.Add(door);
+        }
+
+        public void RemoveDoorFromBadge(string door)
+        {
+            DoorNames.Remove(door); 
+        }
     }
 }
 

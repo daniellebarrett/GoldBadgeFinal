@@ -15,10 +15,7 @@ namespace BadgeRepository
         //Create
         public void CreateNewBadge(int badgeKey, Badge badge)
 
-
-        // need to see if key exists b4 trying to use it. set variable?
-        {       //contains key go here?
-
+        { 
             _badgeDictionary.Add(badgeKey, badge);
         }
         //Read

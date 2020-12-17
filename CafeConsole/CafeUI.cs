@@ -165,8 +165,6 @@ namespace CafeConsole
             {
                 Console.WriteLine("Sorry could not find a Cafe item associated with that Cafe #.");
             }
-
-
         }
         private void DeleteExistingItem()
         {
