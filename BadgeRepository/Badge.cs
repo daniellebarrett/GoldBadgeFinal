@@ -10,15 +10,14 @@ namespace BadgeRepository
     {
         
         public int BadgeID { get; set; }
-        public List<string> DoorNames { get; set; }
+        public List<string> DoorNames { get; set; } = new List<string>();
 
         public Badge() { }
 
-        private static int counter = 0;
         public Badge(int badgeID, List<string> doorNames)
         {
             DoorNames = doorNames;
-            BadgeID = System.Threading.Interlocked.Increment(ref counter);
+            BadgeID = badgeID;
         }
     }
 }

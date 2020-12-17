@@ -8,41 +8,24 @@ namespace BadgeRepository
 {
     public class BadgeRepo
     {
+
         private Dictionary<int, Badge> _badgeDictionary = new Dictionary<int, Badge>();
         //create a dictionary of badges
 
         //Create
         public void CreateNewBadge(int badgeKey, Badge badge)
 
+
         // need to see if key exists b4 trying to use it. set variable?
-        {
-            _badgeDictionary.Add(badge.BadgeID, badge);
+        {       //contains key go here?
+
+            _badgeDictionary.Add(badgeKey, badge);
         }
         //Read
-        public Dictionary<int, Badge> GetMenuBadgeDict()
+        public Dictionary<int, Badge> GetBadgeDict()
         {
             return _badgeDictionary;
-        }
-        //Update
-        public bool UpdateBadge(int badgeID, Badge badge)
-        {
-            Badge oldBadge = GetBadgeByID(badgeID);
-            if (oldBadge != null)
-            {
-                oldBadge.DoorNames = badge.DoorNames;
-                return true;
-            }
-            return false;
-        }
-        //Delete
-        public bool RemoveBadgeFromDictionary(int badgeID)
-        {
-            if (_badgeDictionary.Remove(badgeID))
-            {
-                return true;
-            }
-            return false;
-        }
+        }  
 
         public Badge GetBadgeByID(int badgeID)
         {
@@ -58,6 +41,7 @@ namespace BadgeRepository
             }
             return null;
         }
+
     }
 }
 

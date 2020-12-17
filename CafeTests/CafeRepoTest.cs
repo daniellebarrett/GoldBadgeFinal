@@ -21,28 +21,24 @@ namespace CafeTests
         }
 
         [TestMethod]
-        public void AddToMenu_ShouldGetNotNull()
+        public void AddToCafe_ShouldGetNotNull()
         {
             //Arrange
-            Cafe item = new Cafe();
-            item.ItemNumber = 1;
-            CafeRepo repo = new CafeRepo();
+            
             //Act
-            repo.AddItemToCafe(item);
+            _repo.AddItemToCafe(_item);
             Cafe itemFromDirectory = _repo.GetItemByNumber(9);
             //Assert
-            Assert.IsTrue(repo.GetCafeItemList().Contains(item));
+            Assert.IsTrue(_repo.GetCafeItemList().Contains(itemFromDirectory));
         }
 
         [TestMethod]
-        public void GetItem_ShouldGetNotNull()
+        public void GetCafeItemList_ShouldGetNotNull()
         {
             //Arrange
-            List<string> listofIngredients = new List<string>();
-            listofIngredients.Add("ingredientTest");
-            CafeRepo repo = new CafeRepo();
+            
             //Act
-            List<Cafe> testList = repo.GetCafeItemList();
+            List<Cafe> testList = _repo.GetCafeItemList();
             //Assert
             Assert.IsNotNull(testList);
         }
@@ -51,11 +47,9 @@ namespace CafeTests
         public void RemoveItem_ShouldReturnTrue()
         {
             //Arrange
-            Cafe item = new Cafe();
-            item.ItemNumber = 321;
-            CafeRepo repo = new CafeRepo();
+            
             //Act
-            bool removeItem = _repo.RemoveItemFromCafe(_item.ItemNumber);
+            bool removeItem = _repo.RemoveItemFromCafe(9);
             //Assert
             Assert.IsTrue(removeItem);
         }

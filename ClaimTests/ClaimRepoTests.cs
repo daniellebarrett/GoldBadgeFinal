@@ -25,30 +25,42 @@ namespace ClaimTests
         public void AddClaimToQueue_ShouldReturnTrue()
         {
             //Arrange
-            Claim claim = new Claim();
-            claim.ClaimID = 1;
-            ClaimRepo repo = new ClaimRepo();
+           
             //Act
-            repo.AddClaimToQueue(claim);
-            Claim claimFromDirectory = _claimRepo.GetClaimByID(2);
+            _claimRepo.AddClaimToQueue(_claim);
+            Claim claimFromDirectory = _claimRepo.GetClaimByID(3);
             //Assert
-            Assert.IsTrue(repo.GetClaimQueue().Contains(claim));
+            Assert.IsTrue(_claimRepo.GetClaimQueue().Contains(_claim)) ;
         }
 
         [TestMethod]
         public void GetClaimQueue_ShouldGetNotNull()
         {
             //Arrange
-            // Claim claim = new Claim();
-            /* Queue<Claim> queueOfClaims = new Queue<Claim>();
-             queueOfClaims.Enqueue(claim);*/
-            ClaimRepo repo = new ClaimRepo();
+          
             //Act
-            Queue<Claim> testQueue = repo.GetClaimQueue();
+            Queue<Claim> testQueue = _claimRepo.GetClaimQueue();
             //Assert
             Assert.IsNotNull(testQueue);
         }
 
+        [TestMethod]
+        public void GetClaimByID_ShouldGetNotNull()
+        {
+            //Act
+            Claim result = _claimRepo.GetClaimByID(3);
+            //Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+
+        public void CountMethod_ShouldReturnNotNull()
+        {
+            //Act
+            int count = _claimRepo.CountMethod();
+            Assert.IsNotNull(count);
+        }
 
     }
 }

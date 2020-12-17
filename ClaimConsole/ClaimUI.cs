@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClaimConsole
 {
-    class ClaimUI
+    public class ClaimUI
     {
         private ClaimRepo _claimRepo = new ClaimRepo();
 
